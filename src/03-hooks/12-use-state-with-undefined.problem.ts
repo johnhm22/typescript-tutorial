@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Equal, Expect } from "../helpers/type-utils";
+import { useEffect, useState } from 'react';
+import { Equal, Expect } from '../helpers/type-utils';
 
 interface Data {
   id: number;
@@ -7,11 +7,11 @@ interface Data {
 }
 
 const fetchData = () => {
-  return Promise.resolve({ id: 1, name: "John" });
+  return Promise.resolve({ id: 1, name: 'John' });
 };
 
 export const Component = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState<Data>();
 
   useEffect(() => {
     fetchData().then((val) => {

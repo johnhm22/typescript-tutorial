@@ -1,4 +1,4 @@
-import { Equal, Expect } from "../helpers/type-utils";
+import { Equal, Expect } from '../helpers/type-utils';
 
 export const nullAsRef = (
   <div
@@ -9,14 +9,15 @@ export const nullAsRef = (
 );
 
 // Legacy refs are supported!
-export const stringAsRef = <div ref={"legacyRef"}></div>;
+export const stringAsRef = <div ref={'legacyRef'}></div>;
 
 export const undefinedAsRef = (
   <div
     ref={{
       // Type 'undefined' is not assignable to
       // type 'HTMLDivElement | null'.
-      current: undefined,
+      // current: undefined,
+      current: document.createElement('div'),
     }}
   ></div>
 );

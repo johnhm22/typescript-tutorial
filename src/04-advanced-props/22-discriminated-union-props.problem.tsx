@@ -9,12 +9,12 @@
  */
 
 type ModalProps = {
-  variant: "no-title" | "title";
+  variant: 'no-title' | 'title';
   title?: string;
 };
 
 export const Modal = (props: ModalProps) => {
-  if (props.variant === "no-title") {
+  if (props.variant === 'no-title') {
     return <div>No title</div>;
   } else {
     return <div>Title: {props.title}</div>;
@@ -24,15 +24,15 @@ export const Modal = (props: ModalProps) => {
 export const Test = () => {
   return (
     <div>
-      <Modal variant="title" title="Hello" />
-      <Modal variant="no-title" />
+      <Modal variant='title' title='Hello' />
+      <Modal variant='no-title' />
 
-      {/* @ts-expect-error */}
+      // @ts-expect-error
       <Modal />
       <Modal
-        variant="no-title"
+        variant='no-title'
         // @ts-expect-error
-        title="Oh dear"
+        title='Oh dear'
       />
     </div>
   );

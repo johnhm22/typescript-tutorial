@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const Tags = () => {
-  const [tags, setTags] = useState([]);
+  type Tag = {
+    id: number;
+    value: string;
+  };
+
+  const [tags, setTags] = useState<Tag[]>([]);
   return (
     <div>
       {tags.map((tag) => {
@@ -13,7 +18,7 @@ export const Tags = () => {
             ...tags,
             {
               id: new Date().getTime(),
-              value: "New",
+              value: 'New',
             },
           ]);
         }}
